@@ -15,12 +15,12 @@
             <p>Existing Contacts:</p>
             <ul>
                 {% for contact in contacts %}
-                    <li>Name: {{ contact.getName }}<br>Number: {{ contact.getPhone }}<br>Phone: {{ contact.getAddress }}<br><br> </li>
+                    <li>Name: {{ contact.getName }}<br>Number: {{ contact.getPhone }}<br>Address: {{ contact.getAddress }}<br><br> </li>
                 {% endfor %}
             </ul>
         {% endif %}
 
-        <form action='/add_contacts' method='post'>
+        <form action='/add_contact' method='post'>
                 <label for='name'>Contact Name</label>
                 <input id='name' name='name' type='text'>
 
@@ -37,7 +37,7 @@
         <br><br><br><br><br><br>
 
 
-        <form action='delete_contacts' method='post'>
+        <form action='delete_all_contacts' method='post'>
             <button type='submit'>Delete All Contacts</button> - Warning: Only delete all contacts if you hate your life and don't want to talk to people anymore!
         </form>
     </body>
