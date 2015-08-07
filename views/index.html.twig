@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Contacts</title>
+        </head>
+
+        <body>
+            <h1>Contacts</h1>
+
+            {% if contacts is empty %}
+                <p>There are no currently saved contacts. Make some friends!</p>
+            {% endif %}
+
+            {% if contacts is not empty %}
+                <p>Existing Contacts:</p>
+                <ul>
+                    {% for contacts in contact %}
+                        <li>{{ contact.getName }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <form action='/add_contacts' method='post'>
+                    <label for='name'>Contact Name</label>
+                    <input id='name' name='name' type='text'>
+
+                    <label for='phone'>Phone Number</label>
+                    <input id='phone' name='phone' type='tel'>
+
+                    <label for='address'>Address</label>
+                    <input id='address' name='address' type='text'>
+
+                    <button type='submit'>Add Contact</button>
+
+            </form>
+
+            <br><br><br><br><br><br>
+
+
+            <form action='delete_contacts' method='post'>
+                <button type='submit'>Delete All Contacts</button> - Warning: Only delete all contacts if you hate your life and don't want to talk to people anymore!
+            </form>
+        </body>
+    </html>
